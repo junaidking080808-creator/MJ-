@@ -6,6 +6,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
       - run: unzip -q '*.zip'
+      - run: sed -i 's/private val listener = Listener(/private val listener: Listener = Listener(/' JarvisAssistant/app/src/main/java/com/example/jarvis/ui/ChatViewModel.kt
       - uses: actions/setup-java@v4
         with:
           distribution: temurin
